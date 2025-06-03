@@ -1,0 +1,261 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Pathak classroom</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      @keyframes fadeIn {
+        from { opacity: 0;}
+        to { opacity: 1;}
+      }
+      @keyframes popIn {
+        0% { opacity: 0; transform: scale(0.7);}
+        80% { opacity: 1; transform: scale(1.05);}
+        100% { opacity: 1; transform: scale(1);}
+      }
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%;}
+        50% { background-position: 100% 50%;}
+        100% { background-position: 0% 50%;}
+      }
+      body {
+        background: linear-gradient(120deg, #00e1ff, #00ff85, #ffbe0b, #00e1ff);
+        background-size: 300% 300%;
+        animation: gradientBG 12s ease-in-out infinite;
+      }
+      header, .layout-content-container, .section-animate {
+        animation: fadeInUp 1s;
+      }
+      h1, h2, h3 {
+        animation: popIn 0.8s;
+      }
+      .card-animate {
+        animation: fadeIn 1.2s;
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+      .card-animate:hover {
+        box-shadow: 0 8px 32px 0 #00e1ff44, 0 2px 8px 0 #00ff8544;
+        transform: scale(1.03) rotate(-1deg);
+        background: linear-gradient(120deg, #f0faff 80%, #00e1ff22 100%);
+      }
+      .btn-animate {
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        box-shadow: 0 2px 12px 0 #00e1ff33;
+      }
+      .btn-animate:hover {
+        background: linear-gradient(90deg, #00ff85 0%, #00e1ff 100%);
+        color: #fff;
+        transform: scale(1.07);
+        box-shadow: 0 4px 24px 0 #00e1ff55;
+      }
+      /* Animated underline for nav links */
+      .nav-animate {
+        position: relative;
+        overflow: hidden;
+      }
+      .nav-animate::after {
+        content: "";
+        position: absolute;
+        left: 0; bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #00e1ff, #00ff85);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+      .nav-animate:hover::after {
+        transform: scaleX(1);
+      }
+      /* Glow effect for section headings */
+      .glow {
+        text-shadow: 0 0 8px #00e1ff88, 0 0 16px #00ff8588;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white/80 group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f1f1] px-10 py-3 section-animate">
+          <div class="flex items-center gap-4 text-[#171212]">
+            <!-- Updated photo -->
+            <img src="profile.png"
+              alt="Pathak Photo"
+              class="rounded-full w-12 h-12 object-cover border-2 border-[#00e1ff] shadow-md"
+              style="margin-right: 0.5rem;"
+            />
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-[#171212] text-lg font-bold leading-tight tracking-[-0.015em] glow">Pathak's classroom</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#171212] text-sm font-medium leading-normal nav-animate" href="#about-me">About Me</a>
+              <a class="text-[#171212] text-sm font-medium leading-normal nav-animate" href="#teaching-philosophy">Teaching Philosophy</a>
+              <a class="text-[#171212] text-sm font-medium leading-normal nav-animate" href="#lesson-plans">Lesson Plans</a>
+              <a class="text-[#171212] text-sm font-medium leading-normal nav-animate" href="#contact">Contact</a>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 section-animate">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[650px] flex-col gap-6 bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 card-animate"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpT-VfPib_T7aJMkrjjj5CX9JyT6iVxA_8FLLDoApeuLwzwcb7n0743jGlKhEVx-Pl6ompXUcOtVkTXwPTxPXTyFpYvFOLvYqROwzDvxdhRQ3Jr0fZ560UEf1t5cvYUJnjmcJS0DaZP7IST9eUnWfyqrcujsgoHKgsAQBNaKOSTCK07HRWtdipPwdUjjMsj0Q9hitm40J1Pg6OKD3CnKzZ6Dp5zWE62HbGYw6sOjYu-bEDLDPw20Lc4mRav86Js2kyOIqeok35eSMx"); background-size: cover;'
+                  onmouseover="this.style.backgroundImage='linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url(\'profile.png\')'; this.style.backgroundSize='cover';"
+                  onmouseout="this.style.backgroundImage='linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url(\'https://lh3.googleusercontent.com/aida-public/AB6AXuBpT-VfPib_T7aJMkrjjj5CX9JyT6iVxA_8FLLDoApeuLwzwcb7n0743jGlKhEVx-Pl6ompXUcOtVkTXwPTxPXTyFpYvFOLvYqROwzDvxdhRQ3Jr0fZ560UEf1t5cvYUJnjmcJS0DaZP7IST9eUnWfyqrcujsgoHKgsAQBNaKOSTCK07HRWtdipPwdUjjMsj0Q9hitm40J1Pg6OKD3CnKzZ6Dp5zWE62HbGYw6sOjYu-bEDLDPw20Lc4mRav86Js2kyOIqeok35eSMx\')'; this.style.backgroundSize='cover';"
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] glow"
+                    >
+                      Welcome to My Teaching Portfolio
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      Explore my journey, philosophy, and resources as an educator.
+                    </h2>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#00e1ff] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] btn-animate"
+                    onclick="document.getElementById('about-me').scrollIntoView({behavior:'smooth'})"
+                  >
+                    <span class="truncate">Learn More</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Add IDs to sections for anchor navigation -->
+            <h2 id="about-me" 
+              class="scroll-mt-24 text-[#171212] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 glow">
+              About Me
+            </h2>
+            <p class="text-[#171212] text-base font-normal leading-normal pb-3 pt-1 px-4 section-animate">
+              I am a dedicated educator with a passion for fostering a love of learning in students. With over 10 years of experience, I strive to create an inclusive and engaging
+              classroom environment where every student can thrive. My approach is student-centered, focusing on personalized learning and innovative teaching methods.
+            </p>
+            <!-- Educational Qualification Section (not interactive) -->
+            <div class="px-4 pb-6 card-animate">
+              <h3 class="text-[#00e1ff] text-lg font-semibold mb-2 glow">Educational Qualifications</h3>
+              <ul class="list-disc pl-6 text-[#171212]">
+                <li><strong>M.Sc. in Physics</strong> </li>
+                <li><strong>B.Ed.</strong> </li>
+                <li><strong>B.Sc. Physics</strong></li>
+              </ul>
+            </div>
+            <h2 id="teaching-philosophy" 
+              class="scroll-mt-24 text-[#171212] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 glow">
+              Teaching Philosophy
+            </h2>
+            <p class="text-[#171212] text-base font-normal leading-normal pb-3 pt-1 px-4 section-animate" id="philosophy-short">
+              My teaching philosophy revolves around creating a supportive and stimulating environment that encourages curiosity and critical thinking. I believe in the power of
+              collaboration, creativity, and continuous growth, both for my students and myself. I aim to inspire lifelong learners who are prepared to tackle challenges and
+              contribute positively to the world.
+            </p>
+            <p class="text-[#171212] text-base font-normal leading-normal pb-3 pt-1 px-4 hidden section-animate" id="philosophy-more">
+              <span>
+                I use a variety of instructional strategies to meet the diverse needs of my students, including project-based learning, technology integration, and formative assessment. 
+                I foster a classroom culture where mistakes are viewed as learning opportunities and every student feels valued. 
+                <br><br>
+                By encouraging open communication and critical inquiry, I help students develop not only academic skills but also confidence, empathy, and a growth mindset. 
+                My goal is to empower students to become independent thinkers and lifelong learners who are ready to make a positive impact in their communities.
+              </span>
+            </p>
+            <div class="flex px-4 py-3 justify-start">
+              <button
+                id="readMoreBtn"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f1f1] text-[#171212] text-sm font-bold leading-normal tracking-[0.015em] transition-colors duration-200 hover:bg-[#00e1ff] hover:text-white btn-animate"
+                onclick="togglePhilosophy()"
+              >
+                <span id="readMoreText" class="truncate">Read More</span>
+              </button>
+            </div>
+            <script>
+              function togglePhilosophy() {
+                const more = document.getElementById('philosophy-more');
+                const btnText = document.getElementById('readMoreText');
+                if (more.classList.contains('hidden')) {
+                  more.classList.remove('hidden');
+                  btnText.textContent = "Show Less";
+                } else {
+                  more.classList.add('hidden');
+                  btnText.textContent = "Read More";
+                }
+              }
+            </script>
+            <h2 id="lesson-plans" 
+              class="scroll-mt-24 text-[#171212] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 glow">
+              Lesson Plans
+            </h2>
+            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden section-animate">
+              <div class="flex items-stretch p-4 gap-3">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60 card-animate">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuhxI1wU_LAif6ZOuqcgJ7YtPcdSZUgbvd16Hd03gg04KVntAugdN1MyM_AyQrDVjpbvVzGUhlY8f7F__KHbhvb2Aj-XV67efp3e37BghXSU1AIK9TR8TpzFgVD65f0jM8_YD-lSQhiCkONdQpT7ouuIPbBJv1vWocYuX4qWyz01whMTPeRqXhlw5ayz44jYBA0XHxvGyqly52Irg7Kuh7cJD_xSrDTtec-ZYy_gC-mjg2ihFFuB55eLl1M16UFfAbCwBJS9bMGmjE");'
+                  ></div>
+                  <div>
+                    <p class="text-[#171212] text-base font-medium leading-normal">Physics Lesson: Motion and Forces</p>
+                    <p class="text-[#82686a] text-sm font-normal leading-normal">Interactive lesson on motion and forces for high school students.</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60 card-animate">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDA9biPKJFoSlYnv3LAkQphlHRIKR3Pyrzw3F_z4xogEhJCJ8s5-FvvjjMVuvP_n0mndU2fnKeoQXZXk_QUYMqEAj1LaRk47IQQ9w1md7WXKP89hxmQrIOb3N3wY9GuMalvDddiOGgL1s_yP1-w-jPJOk6E8BAKVEooHDN4g2dARMBExpxh5yi7fCcZuLaa8lS06rRmfOt6f3P3g85DNlAr12I4C7SfhKkzPLuIK2k9xzhGGAoMPx3EDFUUrzW5Z9tPMooQcRcWbxU8");'
+                  ></div>
+                  <div>
+                    <p class="text-[#171212] text-base font-medium leading-normal">Physics Lesson: Energy and Waves</p>
+                    <p class="text-[#82686a] text-sm font-normal leading-normal">Hands-on exploration of energy and waves for middle schoolers.</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60 card-animate">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4MNxU459f0aEKh8g-wUtT1lamMyORCwvHj4D-aGISM4S_giLMoNy8UjSw59M2vH4ZNwsiduQiihAb1fuDOhhSTuRI542SIzsbYDy_ORB5jyo5-LrMeLxbm9rV6DaAANUNevRViXuNf9xQM_y2cQ8vbdZiMCD9FlBOytaNvHsJVWxfNmi1Qk7KT4y-nJdLpgw7Sluh_NXOPPqo9Jpt7C4Yo9IBECkTiBu0wQu3qcEnYlSM4ttMMO9YhK7WybZAEG_bC8cuCGAiXjLe");'
+                  ></div>
+                  <div>
+                    <p class="text-[#171212] text-base font-medium leading-normal">Physics Lesson: Electricity and Magnetism</p>
+                    <p class="text-[#82686a] text-sm font-normal leading-normal">Engaging activities on electricity and magnetism for high school students.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 id="contact" 
+              class="scroll-mt-24 text-[#171212] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 glow">
+              Contact
+            </h2>
+            <p class="text-[#171212] text-base font-normal leading-normal pb-3 pt-1 px-4 section-animate">
+              For inquiries or collaborations, please reach out via email at: <a href="mailto:patel.portfolio@email.com" class="text-[#00e1ff] underline hover:text-[#00ff85] transition-colors">patel.portfolio@email.com</a>
+            </p>
+            <p class="text-[#82686a] text-sm font-normal leading-normal pb-3 pt-1 px-4 underline section-animate">Privacy Policy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // No alert or prompt features present
+    </script>
+  </body>
+</html>
